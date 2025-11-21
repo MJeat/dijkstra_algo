@@ -1,0 +1,8 @@
+WatPhnom CentralMarket 1200
+CentralMarket RiversidePark 900
+RiversidePark RoyalPalace 1100
+WatPhnom NightMarket 700
+NightMarket RiversidePark 500
+CentralMarket OlympicStadium 2500
+OlympicStadium AEONMall1 2300
+AEONMall1 RoyalPalace 1500
