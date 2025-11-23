@@ -7,6 +7,7 @@ public class Graph {
         adj.putIfAbsent(src, new ArrayList<>());
         adj.putIfAbsent(dest, new ArrayList<>());
         adj.get(src).add(new Edge(dest, weight));
+        adj.get(dest).add(new Edge(src, weight)); 
     }
 
     public List<Edge> getNeighbors(String node) {
@@ -26,4 +27,6 @@ class Edge {
         this.to = t;
         this.weight = w;
     }
+   
 }
+

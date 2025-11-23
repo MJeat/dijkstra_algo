@@ -6,7 +6,7 @@ public class Dijkstra {
             Graph graph, String start, Map<String, String> previous) {
 
         Map<String, Integer> dist = new HashMap<>();
-        PriorityQueue<Node> pq = new PriorityQueue<>(Comparator.comparingInt(n -> n.distance));
+        PriorityQueue<Node> pq = new PriorityQueue<>();
 
         for (String node : graph.getNodes()) {
             dist.put(node, Integer.MAX_VALUE);
@@ -18,6 +18,10 @@ public class Dijkstra {
 
         while (!pq.isEmpty()) {
             Node current = pq.poll();
+            
+            if (current.distance > dist.get(current.name)) {
+                continue;
+            }
 
             for (Edge edge : graph.getNeighbors(current.name)) {   // <-- FIXED HERE
                 int newDist = dist.get(current.name) + edge.weight;
@@ -32,13 +36,17 @@ public class Dijkstra {
         return dist;
     }
 
-    static class Node {
+    static class Node implements Comparable<Node> {
         String name;
         int distance;
 
         Node(String name, int distance) {
             this.name = name;
             this.distance = distance;
+        }
+        @Override
+        public int compareTo(Node other) {
+            return Integer.compare(this.distance, other.distance);
         }
     }
 }

@@ -4,6 +4,7 @@ import java.util.*;
 public class Main {
     public static void main(String[] args) throws Exception {
 
+
         Graph graph = new Graph();
 
         // Load map data
@@ -12,20 +13,34 @@ public class Main {
 
         while ((line = br.readLine()) != null) {
             String[] parts = line.split(" ");
+            if (parts.length == 3) {
+                graph.addEdge(parts[0], parts[1], Integer.parseInt(parts[2]));
+            }
             graph.addEdge(parts[0], parts[1], Integer.parseInt(parts[2]));
         }
         br.close();
 
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Enter starting location: ");
+        System.out.println("Enter a starting location ");
+        System.out.println("We have the following locations available:");
+        for (String node : graph.getNodes()) {
+            System.out.println("- " + node);
+        }
+        System.out.print("Your choice: ");
         String start = scanner.nextLine().replace(" ", "");
-        System.out.println("Enter destination: ");
+        System.out.println("Enter a destination ");
+        System.out.println("We have the following locations available:");
+        for (String node : graph.getNodes()) {
+            System.out.println("- " + node);
+        }
+        System.out.print("Your choice: ");
         String end = scanner.nextLine().replace(" ", "");
 
         Map<String, String> previous = new HashMap<>();
         Map<String, Integer> distances = Dijkstra.shortestPath(graph, start, previous);
+        
 
-        if (!distances.containsKey(end)) {
+        if (!distances.containsKey(end) || distances.get(end) == Integer.MAX_VALUE) {
             System.out.println("Location not found.");
             return;
         }
@@ -45,9 +60,12 @@ public class Main {
 
         Collections.reverse(path);
 
-        for (String p : path) {
-            System.out.print(p + " -> ");
+        for (int i = 0; i < path.size(); i++) {
+            System.out.print(path.get(i));
+            if (i < path.size() - 1) {
+                System.out.print(" -> ");
+            }
         }
-        System.out.println("END");
+        System.out.println();
     }
 }
