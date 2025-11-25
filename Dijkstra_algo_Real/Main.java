@@ -14,9 +14,12 @@ public class Main {
         while ((line = br.readLine()) != null) {
             String[] parts = line.split(" ");
             if (parts.length == 3) {
-                graph.addEdge(parts[0], parts[1], Integer.parseInt(parts[2]));
+                int w = Integer.parseInt(parts[2]);
+
+                // UNDIRECTED GRAPH (REAL MAP)
+                graph.addEdge(parts[0], parts[1], w);
+                graph.addEdge(parts[1], parts[0], w);  
             }
-            graph.addEdge(parts[0], parts[1], Integer.parseInt(parts[2]));
         }
         br.close();
 
