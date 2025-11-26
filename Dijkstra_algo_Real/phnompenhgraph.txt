@@ -1,6 +1,6 @@
 WatPhnom CentralMarket 1200
 WatPhnom RiversidePark 1400
-WatPhnom RoyalPalace 2600
+WatPhnom RoyalPalace 600
 WatPhnom NightMarket 500
 WatPhnom OlympicStadium 3100
 WatPhnom AEONMall1 4300
@@ -109,6 +109,7 @@ RoyalPalace MonivongBoulevard 1892
 RoyalPalace SisowathQuay 1905
 RoyalPalace PreahNorodomBoulevard 1918
 RoyalPalace ToulKouk 1931
+WatPhnom RoyalPalace 600
 RoyalPalace ChoeungEk 1944
 RoyalPalace CentralBusStation 1957
 RoyalPalace SihanoukBoulevard 1970

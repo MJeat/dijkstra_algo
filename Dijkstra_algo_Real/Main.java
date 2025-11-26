@@ -1,3 +1,15 @@
+
+/* 
+To run the code:
+- Go to main.java
+- Click run
+- Input the exact your location name you desired and click enter
+- Input the destination name and click enter
+- The outputs is the calculated result to find the nearest route.
+*/
+
+
+
 import java.io.*;
 import java.util.*;
 
@@ -8,7 +20,7 @@ public class Main {
         Graph graph = new Graph();
 
         // Load map data
-        BufferedReader br = new BufferedReader(new FileReader("graph.txt"));
+        BufferedReader br = new BufferedReader(new FileReader("americagraph.txt"));
         String line;
 
         while ((line = br.readLine()) != null) {
