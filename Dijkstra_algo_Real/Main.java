@@ -1,11 +1,23 @@
 
 /* 
+Main.java:
+3 main functions:
+
+- Loads a real-world map data from a text file and turns it into a graph using Graph.java
+- Accepts user input for starting location and destination
+- Runs Dijkstra.java to compute & print the shortest route and distance
+
+
 To run the code:
 - Go to main.java
 - Click run
 - Input the exact your location name you desired and click enter
 - Input the destination name and click enter
 - The outputs is the calculated result to find the nearest route.
+
+Houston & Miami     (for 3 nodes)
+NewYorkCity & LosAngeles   (3 nodes)
+Newark & Chicago    (2 nodes)
 */
 
 

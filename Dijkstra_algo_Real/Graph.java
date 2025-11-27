@@ -1,5 +1,12 @@
 import java.util.*;
 
+/* 
+2 main functions:
+- It is used to create graphs (weighted nodes and its neighbor nodes)
+- It uses adjacent list to create graph
+*/
+
+
 public class Graph {
     private Map<String, List<Edge>> adj = new HashMap<>();
 

@@ -1,7 +1,19 @@
+/*
+3 main functions:
+- It finds the shortest path 
+- It computes the shortest path from a start node 
+    Start from a given node → start
+    Explore all reachable nodes
+    Calculate the minimum distance to every node
+     Store those results in the "dist" map
+
+- It uses priority queue to store the previous and nearest node. That's the role of priority queue
+*/
+
+
 import java.util.*;
 
 public class Dijkstra {
-
     public static Map<String, Integer> shortestPath(
             Graph graph, String start, Map<String, String> previous) {
 
